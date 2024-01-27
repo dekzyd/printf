@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	str_len = 0;
 	if (format != NULL)
 	{
-		while (*format != '\0')
+		for (; *format != '\0'; format++, str_len++)
 		{
 			if (*format == '\0')
 				break;
@@ -46,8 +46,8 @@ int _printf(const char *format, ...)
 					str = va_arg(argt, char *);
 					while (*str != '\0')
 					{
-						putchar(*str);
 						str_len++;
+						putchar(*str);
 						str++;
 					}
 					str_len--;
@@ -56,8 +56,8 @@ int _printf(const char *format, ...)
 					dec = _itoa(va_arg(argt, int));
 					while (*dec != '\0')
 					{
-						putchar(*dec);
 						str_len++;
+						putchar(*dec);
 						dec++;
 					}
 					str_len--;
@@ -66,8 +66,8 @@ int _printf(const char *format, ...)
 					dec = _itoa(va_arg(argt, int));
 					while (*dec != '\0')
 					{
-						putchar(*dec);
 						str_len++;
+						putchar(*dec);
 						dec++;
 					}
 					str_len--;
@@ -77,8 +77,6 @@ int _printf(const char *format, ...)
 					putchar(*format);
 					str_len++;
 			}
-			format++;
-			str_len++;
 		}
 	}
 	va_end(argt);
