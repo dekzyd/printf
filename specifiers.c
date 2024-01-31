@@ -128,7 +128,7 @@ char *get_width(char *str, params_t *params, va_list argp)
 
 	if (*str == '*')
 	{
-		d = va_arg(argp, int);
+		dig = va_arg(argp, int);
 		str++;
 	}
 	else

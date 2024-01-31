@@ -117,4 +117,4 @@ char *get_precision(char *str, params_t *params, va_list argp);
 /* the _prinf.c module */
 int _printf(const char *format, ...);
 
-#endif /*_MAIN_H_*/#
+#endif /*_MAIN_H_*/

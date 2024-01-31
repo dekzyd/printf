@@ -49,7 +49,7 @@ int print_unsigned(va_list argp, params_t *params)
 	unsigned long ld;
 
 	if (params->l_modifier)
-		ld = (unsigned long)va_arg(ap, unsigned long);
+		ld = (unsigned long)va_arg(argp, unsigned long);
 	else if (params->h_modifier)
 		ld = (unsigned short int)va_arg(argp, unsigned int);
 	else
@@ -75,7 +75,7 @@ int print_address(va_list argp, params_t *params)
 	if (!num)
 		return (_puts("(nil)"));
 
-	str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	str = convert(num, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 	*--str = 'x';
 	*--str = '0';
 	return (print_number(str, params));
